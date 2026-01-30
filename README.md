@@ -2,7 +2,7 @@
 
 This repository provides **reference agent files** you can copy into your project so that AI coding agents (e.g. in IDEs like **Cursor**, **Windsurf**, **Antigravity**) read the right folder and follow consistent conventions.
 
-These files were built using the [AGENTS.md](https://agents.md/) format as reference: a simple, open format for guiding coding agents, used by many open-source projects.
+These files were built using the [AGENTS.md](https://agents.md/) format as reference: a simple, open format for guiding coding agents, used by many open-source projects. The content and structure are copied from [mm_poc_v2](https://github.com/shemaobt/mm_poc_v2) and linked here for reuse.
 
 ## Why use agent files?
 
@@ -11,30 +11,32 @@ These files were built using the [AGENTS.md](https://agents.md/) format as refer
 
 Putting the right file in the right directory helps IDE-based agents (Cursor, Antigravity, Windsurf, etc.) apply the correct guidelines when working in that part of the repo.
 
-## What’s in this repo
+## Reference files in this repo
 
 | File | Purpose | Where to put it in your repo |
 |------|---------|------------------------------|
-| **GENERAL-WEB-APP.md** | Project-wide guidelines: code style, architecture, secrets, commits, pointers to backend/frontend. | **Repository root** (e.g. next to your main README). |
-| **BACKEND.md** | Backend-specific: API layer, services, DB, typing, docstrings, stack. | **`backend/`** (or your backend package root). |
-| **FRONTEND.md** | Frontend-specific: React/TS, components, styling, state, structure. | **`frontend/`** (or your client app root). |
+| **[GENERAL-WEB-APP.md](https://github.com/shemaobt/reference-agents-md/blob/main/GENERAL-WEB-APP.md)** | Project-wide guidelines: code style, architecture, build (Docker), secrets, commits, pointers to backend/frontend. Same structure as [mm_poc_v2/AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/AGENTS.md). | **Repository root** (e.g. as `AGENTS.md` or `GENERAL-WEB-APP.md`). |
+| **[BACKEND.md](https://github.com/shemaobt/reference-agents-md/blob/main/BACKEND.md)** | Backend-specific: FastAPI, Prisma, Pydantic, api/services/core/models, DB, typing, docstrings. Same structure as [mm_poc_v2/backend/AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/backend/AGENTS.md). | **`backend/`** (as `AGENTS.md` or `BACKEND.md`). |
+| **[FRONTEND.md](https://github.com/shemaobt/reference-agents-md/blob/main/FRONTEND.md)** | Frontend-specific: React, TypeScript, Tailwind, Zustand, component structure, styling, state. Same structure as [mm_poc_v2/frontend/AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/frontend/AGENTS.md). | **`frontend/`** (as `AGENTS.md` or `FRONTEND.md`). |
+
+Each file in this repo **references the others by link** (e.g. GENERAL-WEB-APP.md links to BACKEND.md and FRONTEND.md; BACKEND.md and FRONTEND.md link back to GENERAL-WEB-APP.md). When you copy them into your project, update those links to your repo paths or keep relative paths (e.g. `../AGENTS.md`, `backend/AGENTS.md`).
 
 ## How to use
 
-1. **Copy** the reference files you need into your project.
-2. **Rename** if your project uses different names (e.g. `BACKEND.md` → `AGENTS.md` in `backend/`, or keep `BACKEND.md`).
+1. **Copy** the reference files you need from this repo (or from the links above).
+2. **Rename** if your project uses different names (e.g. `BACKEND.md` → `AGENTS.md` in `backend/`).
 3. **Place** them in the correct directories:
-   - **Root** → `GENERAL-WEB-APP.md` (or `AGENTS.md`) so agents see global rules when working anywhere.
-   - **backend/** → `BACKEND.md` (or `AGENTS.md`) so agents see backend rules when editing backend code.
-   - **frontend/** → `FRONTEND.md` (or `AGENTS.md`) so agents see frontend rules when editing frontend code.
-4. **Edit** the content to match your stack, structure, and conventions (replace placeholders, add project-specific commands and paths).
+   - **Root** → `GENERAL-WEB-APP.md` or `AGENTS.md` so agents see global rules when working anywhere.
+   - **backend/** → `BACKEND.md` or `AGENTS.md` so agents see backend rules when editing backend code.
+   - **frontend/** → `FRONTEND.md` or `AGENTS.md` so agents see frontend rules when editing frontend code.
+4. **Edit** the content to match your stack and conventions. Update cross-references (links to the root or backend/frontend files) so they work in your repo (relative paths or your repo URLs).
 
 Most agents and IDEs (Cursor, Windsurf, Antigravity, etc.) automatically discover and use the **nearest** agent file in the directory tree, so the file in `backend/` applies when working under `backend/`, and the one at root applies when context is repo-wide.
 
-## Reference
+## Source and format
 
-- **AGENTS.md format:** [https://agents.md/](https://agents.md/)
-- **Nested files:** For large monorepos, put an agent file in each package or app; the closest file in the tree takes precedence.
+- **Content/structure source:** [mm_poc_v2](https://github.com/shemaobt/mm_poc_v2) — [AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/AGENTS.md), [backend/AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/backend/AGENTS.md), [frontend/AGENTS.md](https://github.com/shemaobt/mm_poc_v2/blob/main/frontend/AGENTS.md).
+- **Format reference:** [https://agents.md/](https://agents.md/).
 
 ## License
 
