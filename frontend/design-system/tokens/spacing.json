@@ -1,0 +1,35 @@
+{
+    "base": 4,
+    "scale": {
+        "xs": {
+            "value": "4px",
+            "flutter": 4
+        },
+        "sm": {
+            "value": "8px",
+            "flutter": 8
+        },
+        "md": {
+            "value": "16px",
+            "flutter": 16
+        },
+        "lg": {
+            "value": "24px",
+            "flutter": 24
+        },
+        "xl": {
+            "value": "32px",
+            "flutter": 32
+        },
+        "xxl": {
+            "value": "48px",
+            "flutter": 48
+        }
+    },
+    "layout": {
+        "web_container_max_width": "1200px",
+        "app_edge_padding": "20px",
+        "card_border_radius_web": "12px",
+        "card_border_radius_app": "20px"
+    }
+}
