@@ -1,0 +1,100 @@
+{
+    "keyframes": {
+        "fade_in": {
+            "name": "fade-in",
+            "keyframes": {
+                "0%": {
+                    "opacity": 0,
+                    "transform": "translateY(10px)"
+                },
+                "100%": {
+                    "opacity": 1,
+                    "transform": "translateY(0)"
+                }
+            }
+        },
+        "slide_in": {
+            "name": "slide-in",
+            "keyframes": {
+                "0%": {
+                    "opacity": 0,
+                    "transform": "translateX(-10px)"
+                },
+                "100%": {
+                    "opacity": 1,
+                    "transform": "translateX(0)"
+                }
+            }
+        },
+        "pulse_soft": {
+            "name": "pulse-soft",
+            "keyframes": {
+                "0%": {
+                    "opacity": 1
+                },
+                "50%": {
+                    "opacity": 0.7
+                },
+                "100%": {
+                    "opacity": 1
+                }
+            }
+        },
+        "bounce_subtle": {
+            "name": "bounce-subtle",
+            "keyframes": {
+                "0%": {
+                    "transform": "translateY(0)"
+                },
+                "50%": {
+                    "transform": "translateY(-3px)"
+                },
+                "100%": {
+                    "transform": "translateY(0)"
+                }
+            }
+        },
+        "celebrate": {
+            "name": "celebrate",
+            "keyframes": {
+                "0%": {
+                    "transform": "scale(1)"
+                },
+                "50%": {
+                    "transform": "scale(1.1)"
+                },
+                "100%": {
+                    "transform": "scale(1)"
+                }
+            }
+        }
+    },
+    "durations": {
+        "fast": "100ms",
+        "default": "200ms",
+        "medium": "300ms",
+        "slow": "500ms"
+    },
+    "easing": {
+        "ease_in": "ease-in",
+        "ease_out": "ease-out",
+        "ease_in_out": "ease-in-out"
+    },
+    "animations": {
+        "fade_in": {
+            "animation": "fade-in 0.3s ease-out"
+        },
+        "slide_in": {
+            "animation": "slide-in 0.3s ease-out"
+        },
+        "pulse_soft": {
+            "animation": "pulse-soft 2s ease-in-out infinite"
+        },
+        "bounce_subtle": {
+            "animation": "bounce-subtle 0.5s ease-in-out"
+        },
+        "celebrate": {
+            "animation": "celebrate 0.4s ease-in-out"
+        }
+    }
+}

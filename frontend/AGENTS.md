@@ -1,5 +1,19 @@
 # Frontend Agent Guidelines (mm_poc_v2)
 
+## Design System Authority
+
+All UI, styling, layout, spacing, colors, typography, and visual decisions
+MUST strictly follow the Design System defined in:
+
+- **[./design-system/AGENTS.md](./design-system/AGENTS.md)** - Brand authority and core principles
+- **[./design-system/DESIGN.md](./design-system/DESIGN.md)** - Design system overview and complete index
+- **[./design-system/tokens/](./design-system/tokens/)** - Authoritative design tokens (colors, typography, spacing, etc.)
+- **[./design-system/*.md](./design-system/)** - Complete implementation guides
+
+This AGENT must not override, reinterpret, or invent visual rules.
+If a visual decision is missing, consult the design system documentation or request clarification.
+Failure to follow the Design System must be treated as a defect, not a stylistic preference.
+
 This file defines **frontend-specific** conventions for LLM agents working in `frontend/`. It extends the repository-wide [GENERAL-WEB-APP.md](https://github.com/shemaobt/reference-agents-md/blob/main/GENERAL-WEB-APP.md): follow those global guidelines first, then apply what is below.
 
 ---
@@ -85,8 +99,12 @@ frontend/src/
 ## 3. Styling and Tailwind
 
 - **Use Tailwind only** for layout, spacing, colors, typography, and responsive behavior.
-- **Avoid inline styles** for things Tailwind can do (e.g. `className="flex items-center gap-2"` instead of `style={{ display: 'flex', alignItems: 'center' }}`). Use inline `style` only when necessary (e.g. dynamic values, third-party integration).
-- **Use the design tokens** from `tailwind.config.js`: `branco`, `areia`, `azul`, `telha`, `verde`, `verde-claro`, `preto`, and semantic tokens (`primary`, `background`, `border`, `ring`, etc.). Do not introduce arbitrary hex values in JSX; extend the theme if new tokens are needed.
+- **Avoid inline styles** for things Tailwind can handle (e.g. `className="flex items-center gap-2"` instead of `style={{ display: 'flex', alignItems: 'center' }}`).  
+  Use inline `style` **only when strictly necessary** (e.g. dynamic values or third-party integrations).
+- **Always use the design tokens** defined in `tailwind.config.js` for colors and semantics  
+  (`branco`, `areia`, `azul`, `telha`, `verde`, `verde-claro`, `preto`, and semantic tokens like `primary`, `background`, `border`, `ring`).
+- `tailwind.config.js` **must stay in sync** with `design-system/tokens/*.json`.  
+  Do **not** introduce arbitrary hex values in JSX; extend the theme if new tokens are required.
 
 ### Centralized style constants
 

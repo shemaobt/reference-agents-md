@@ -1,0 +1,80 @@
+{
+    "brand": {
+        "primary": {
+            "name": "Telha",
+            "value": "#BE4A01",
+            "description": "CTAs, primary buttons, and active icons",
+            "usage": [
+                "shared"
+            ]
+        },
+        "secondary": {
+            "name": "Blue",
+            "value": "#89AAA3",
+            "description": "Supporting elements and subtle backgrounds",
+            "usage": [
+                "shared"
+            ]
+        },
+        "tertiary": {
+            "name": "Light Green",
+            "value": "#777D45",
+            "description": "Positive indicators and decorative elements",
+            "usage": [
+                "shared"
+            ]
+        }
+    },
+    "ui": {
+        "background": {
+            "name": "Shema White (Cream)",
+            "value": "#F6F5EB",
+            "description": "Default background for all screens",
+            "usage": [
+                "shared"
+            ]
+        },
+        "surface": {
+            "name": "White",
+            "value": "#FFFFFF",
+            "description": "Cards, inputs, and elevated surfaces",
+            "usage": [
+                "shared"
+            ]
+        },
+        "text": {
+            "primary": {
+                "name": "Shema Black",
+                "value": "#0A0703",
+                "usage": [
+                    "shared"
+                ]
+            },
+            "secondary": {
+                "name": "Shema Dark Green",
+                "value": "#3F3E20",
+                "usage": [
+                    "shared"
+                ]
+            }
+        }
+    },
+    "feedback": {
+        "success": {
+            "value": "#777D45",
+            "reference": "Derived from the Light Green brand color",
+            "usage": [
+                "web",
+                "app"
+            ]
+        },
+        "warning": {
+            "value": "#C5C29F",
+            "reference": "Sand",
+            "usage": [
+                "web",
+                "app"
+            ]
+        }
+    }
+}
