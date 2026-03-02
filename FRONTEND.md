@@ -133,7 +133,11 @@ frontend/src/
 
 - **Functional components**: Only function components; no class components.
 - **UI primitives**: Use and extend components in `components/ui/` (Button, Card, Input, Dialog, Select, Badge, Progress, etc.). They use Radix + Tailwind + `cva` + `cn`. Match their API (e.g. `variant`, `size`, `className`).
-- **Icons**: Use **lucide-react** only. Do not add another icon library.
+- **Icons**:
+- Use lucide-react only.
+- Use outline icons exclusively.
+- Do not mix outline and filled icons.
+- Keep default stroke width unless explicitly needed.
 - **Toasts**: Use **sonner** (`toast.success`, `toast.error`, `toast.warning`, etc.) as in the rest of the app.
 
 ---
@@ -146,6 +150,68 @@ frontend/src/
 - **File names**: PascalCase for components (e.g. `Stage2Participants.tsx`); camelCase for utilities, hooks, stores (e.g. `passageStore.ts`, `useOptions.ts`, `cn.ts`).
 
 ---
+
+
+## 9. Design System Visual Identity (Shema)
+
+All UI, styling, layout, spacing, colors, typography, and visual decisions MUST strictly follow these rules.
+Do not override, reinterpret, or invent visual rules. Dark interfaces must be composed only using Shema palette colors.
+
+### 9.1 Typography
+- **Montserrat**: Entire interface (UI, buttons, navigation, labels, headings).
+- **Merriweather**: Long-form texts, biblical content, and continuous reading.
+- **Letter Spacing**: Use `tracking-tight` for normal headings, `tracking-wide` for labels/badges/uppercase.
+
+### 9.2 Color Hierarchy & Palette
+The Shema Design System heavily relies on an earthy palette. Do NOT use generic neutral greys.
+- **Telha (#BE4A01)**: Exclusive to CTAs, primary actions, and active states. Never use as a neutral decorative color. Use opacity for hover (`hover:bg-telha/90`).
+- **Shema White / Cream (#F6F5EB)**: Main app background.
+- **White (#FFFFFF)**: Reserved strictly for elevated surfaces (Cards, Inputs, Modals).
+- **Shema Black (#0A0703)**: Primary text color.
+- **Shema Dark Green (#3F3E20)**: Secondary text, subtitles.
+- **Blue (#89AAA3)**: Supporting elements.
+- **Light Green (#777D45 / verde-claro)**: Success states, validation.
+- **Sand (#C5C29F / areia)**: Borders, muted elements, warnings.
+
+### 9.3 Spacing & Layout
+Base unit is **4px** (Tailwind default).
+- **Card padding**: `p-6` (24px) recommended for desktop, minimum 16px (`p-4`) on mobile.
+- **Section gaps**: `space-y-6` or `space-y-8` for vertical rhythm.
+- **Form spacing**: `space-y-4` between form groups, `space-y-2` between label and input.
+- **Label spacing**: Default spacing between label and input/select is `mb-2` (8px).
+- **Mobile layout**: Use **Elevation** to separate surfaces, generously rounded corners (16px+ for mobile), and large touch areas (min 44px height).
+
+### 9.4 Cards & Surfaces
+- **Background**: White (`bg-white`).
+- **Borders**: Subtle border with Sand (`border border-areia/30`).
+- **Shadows**: Soft elevation (`shadow-sm`, `shadow-md`). Hover states must increase shadow intensity (`hover:shadow-md`) and adjust border opacity (`hover:border-telha/30`).
+- **Corner Radius**: 8-12px (`rounded-lg`) on Web, 16px+ (`rounded-2xl`) on Mobile.
+- **Card Base Classes**: `bg-white rounded-lg border border-areia/30 shadow-sm`
+- **Card Hover Classes**: `transition-all duration-200 hover:shadow-md hover:border-telha/30`
+
+### 9.5 Buttons & Interactive Elements
+- **Primary (Tile/Telha)**: Only for main CTAs.
+- **States**: Use opacity or scale for hover/focus (`hover:bg-telha/90`, `active:scale-[0.98]`). Never introduce new colors on hover.
+- **Focus states**: Ring with telha color (`focus:ring-telha`).
+- **Rounded corners**: `rounded-md` or `rounded-lg` (8px+) for Web.
+- **Padding**: Default `px-4 py-2`.
+
+### 9.6 Badges & States
+- **Shape**: Full rounded (`rounded-full`) for pill-shaped badges.
+- **Validation**:
+  - Success: `bg-verde-claro/20 text-verde-claro border-verde-claro/30`
+  - Pending: `bg-areia/30 text-verde border-areia`
+  - Error: `bg-red-100 text-red-800 border-red-200`
+
+### 9.7 Animations & Transitions
+- **Hover Transitions**: `transition-all duration-200`
+- **Click Effects**: `active:scale-[0.98]`
+- **Attention**: `animate-pulse-soft` for new/urgent badges.
+
+### 9.8 Forms
+- **Inputs**: White background (`bg-white`) with sand border (`border-areia`).
+- **Focus**: `focus:ring-2 focus:ring-telha focus:border-telha`
+- **Labels**: Montserrat medium, `text-sm`, `text-preto`, `mb-2`.
 
 ## 8. Summary Checklist (Frontend)
 
